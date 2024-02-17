@@ -1,0 +1,25 @@
+    <p>{{ last_post.coordinate_lat }}</p>
+    <p>{{ last_post.coordinate_lon }}</p>
+
+    <p>{{ last_post.city_name }}</p>
+    <p>{{ last_post.country }}</p>
+    <p>{{ last_post.population }}</p>
+    <p>{{ last_post.timezone }}</p>
+
+    <p>{{ last_post.temp }}</p>
+    <p>{{ last_post.feels_like }}</p>
+    <p>{{ last_post.temp_min }}</p>
+    <p>{{ last_post.temp_max }}</p>
+    <p>{{ last_post.pressure }}</p>
+    <p>{{ last_post.sea_level }}</p>
+    <p>{{ last_post.grnd_level }}</p>
+    <p>{{ last_post.humidity }}</p>
+    <p>{{ last_post.temp_kf }}</p>
+
+    <p>{{ last_post.weather_name }}</p>
+    <p>{{ last_post.description }}</p>
+    <p>{{ last_post.icon }}</p>
+    <p>{{ last_post.clouds }}</p>
+    <p>{{ last_post.wind_speed }}</p>
+    <p>{{ last_post.wind_deg }}</p>
+    <p>{{ last_post.wind_gust }}</p>

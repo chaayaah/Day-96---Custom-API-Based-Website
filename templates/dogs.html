@@ -1,0 +1,101 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+
+<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold text-body-emphasis">Current Weather Data</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">
+       <p>Access current weather data for any location</p>
+        <p>We collect and process weather data from different sources such as global and local weather models, satellites, radars and a vast network of weather stations
+        JSON, XML, and HTML formats</p>
+        <p>Included in both free and paid subscriptions</p>
+      </p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+
+        <button onclick="document.getElementById('id01').style.display='block'" type="button" class="btn btn-primary btn-lg px-4 me-sm-3" >Try API</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="window.open('https://developers.thecatapi.com/')" >Visit</button>
+      </div>
+    </div>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+      <div class="container px-5">
+        <img src="static/assets/img/dog_api.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+      </div>
+    </div>
+    <br>
+
+        <div class="table-responsive medium">
+        <table class="table table-striped table-sm w-60">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Weight</th>
+              <th scope="col">Height</th>
+              <th scope="col">Breed For</th>
+              <th scope="col">Breed Group</th>
+              <th scope="col">Life Span</th>
+              <th scope="col">Temperament</th>
+              <th scope="col">Image URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                {% if last_post: %}
+                <td>{{ last_post.id }}</td>
+                <td>{{ last_post.name }}</td>
+                <td>{{ last_post.height }}</td>
+                <td>{{ last_post.weight }}</td>
+                <td>{{ last_post.breed_for }}</td>
+                <td>{{ last_post.breed_group }}</td>
+                <td>{{ last_post.life_span }}</td>
+                <td>{{ last_post.temperament }}</td>
+                <td>{{ last_post.url }}</td>
+                {% endif %}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    <br>
+        <div class="container px-5">
+        <img src="{{ last_post.url }}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="400" height="300" loading="lazy">
+      </div>
+
+ <div class="w3-container">
+    <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-black">
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Random User</h2>
+      </header>
+      <div class="w3-container">
+          <br>
+            {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+      </div>
+
+        <br>
+      <header class="w3-container w3-black">
+        <h5>© 2017–2023</h5>
+      </header>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+<div class="w3-container">
+
+</div>
+
+
+
+<script>
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+}
+</script>
+
+{% include "footer.html" %}
